@@ -1,8 +1,12 @@
-var express = require("express")
+var express = require('express')
 var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 require("./db/schema")
 mongoose.connect('mongodb://localhost/reminders')
 var app = express()
+app.set("view engine", "hbs")
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}))
 
 var ReminderModel = mongoose.model('Reminder')
 var AuthorModel = mongoose.model("Author")
@@ -13,7 +17,8 @@ app.listen(4000, function(){
 
 app.get("/reminders", function(req, res){
   ReminderModel.find({}, function(err, docs){
-    res.send(docs);
+    console.log(docs)
+    res.render("reminders/index", {reminders: docs});
 
   })
 });

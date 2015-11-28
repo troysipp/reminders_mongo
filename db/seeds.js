@@ -8,8 +8,16 @@ var bob = new AuthorModel({name: "bob"})
 var charlie = new AuthorModel({name: "charlie"})
 var tom = new AuthorModel({name: "tom"})
 
+var reminder1 = new ReminderModel({body: "reminder1!!"})
+var reminder2 = new ReminderModel({body: "reminder2!!"})
+var reminder3 = new ReminderModel({body: "reminder3!!"})
+
 var authors = [bob, charlie, tom]
+var reminders = [reminder1, reminder2, reminder3]
+
 for(var i = 0; i < authors.length; i++){
+  authors[i].reminders.push(reminders[i])
+
   authors[i].save(function(err){
     if (err){
       console.log(err)
@@ -19,11 +27,7 @@ for(var i = 0; i < authors.length; i++){
   })
 }
 
-var reminder1 = new ReminderModel({body: "reminder1!!", author: bob})
-var reminder2 = new ReminderModel({body: "reminder2!!", author: charlie})
-var reminder3 = new ReminderModel({body: "reminder3!!", author: charlie})
 
-var reminders = [reminder1, reminder2, reminder3]
 
 for(var i = 0; i < reminders.length; i++){
   reminders[i].save(function(err){
