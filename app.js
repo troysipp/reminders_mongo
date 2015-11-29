@@ -40,10 +40,7 @@ app.get("/authors/new", function(req,res){
 app.post("/authors", function(req, res){
   var author = new AuthorModel({name: req.body.name})
   author.save(function(err){
-    if (err){
-      console.log(err)
-    }else {
-      console.log("author was saved")
+    if (!err){
       res.redirect("authors")
     }
   })
