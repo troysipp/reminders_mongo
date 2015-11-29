@@ -1,8 +1,12 @@
+
+<a href="/authors/new">New Author</a>
 {{#each authors}}
-  <div>
-    <div class="author">{{name}}</div>
+<div class="author">
+    <div class="authorName"><a href="/authors/{{_id}}">{{name}}</a></div>
   {{#each reminders}}
-    <div class="reminder">{{body}}<div>
+    <p class="reminder">{{body}}</p>
   {{/each}}
-  </div>
+  <br>
+</div>
+
 {{/each}}

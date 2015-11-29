@@ -1,8 +1,14 @@
 var mongoose = require('mongoose')
 require('./schema')
-mongoose.connect('mongodb://localhost/reminders')
+var conn = mongoose.connect('mongodb://localhost/reminders')
 var AuthorModel = mongoose.model("Author")
 var ReminderModel = mongoose.model("Reminder")
+AuthorModel.remove({}, function(err){
+  console.log(err)
+})
+ReminderModel.remove({}, function(err){
+  console.log(err)
+})
 
 var bob = new AuthorModel({name: "bob"})
 var charlie = new AuthorModel({name: "charlie"})
