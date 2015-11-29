@@ -2,5 +2,14 @@
 {{#each reminders}}
 <p>{{body}}</p>
 {{/each}}
+
+<h3>New Reminder</h3>
+
+<h2>Create new Author</h2>
+<form action="/authors/{{_id}}/reminders" method="post">
+<label>Body:</label>
+<input type="text" name="body">
+<input type="submit">
+</form>
 <a href="/authors/{{_id}}/edit">Edit Author</a>
 <a href="/authors">Back</a>

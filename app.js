@@ -81,3 +81,14 @@ app.get("/authors/:id/delete", function(req, res){
     }
   })
 })
+
+app.post("/authors/:id/reminders", function(req,res){
+  AuthorModel.findById(req.params.id, function(err, docs){
+    docs.reminders.push(new ReminderModel({body: req.body.body}))
+    docs.save(function(err){
+      if(!err){
+        res.redirect("/authors/" + req.params.id)
+      }
+    })
+  })
+})
