@@ -1,8 +1,7 @@
 var mongoose = require('mongoose')
-require('./schema')
 var conn = mongoose.connect('mongodb://localhost/reminders')
-var AuthorModel = mongoose.model("Author")
-var ReminderModel = mongoose.model("Reminder")
+var AuthorModel = require("../models/author")
+var ReminderModel = require("../models/reminder")
 AuthorModel.remove({}, function(err){
   console.log(err)
 })
@@ -32,18 +31,6 @@ for(var i = 0; i < authors.length; i++){
       console.log(err)
     }else {
       console.log("author was saved")
-    }
-  })
-}
-
-
-
-for(var i = 0; i < reminders.length; i++){
-  reminders[i].save(function(err){
-    if (err){
-      console.log(err)
-    }else {
-      console.log("reminder was saved")
     }
   })
 }

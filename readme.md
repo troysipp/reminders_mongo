@@ -1,4 +1,4 @@
-# Reminderly
+# Reminder.ly
 
 ## Description
 This is a 2 - model Todo App built using Express and Mongo/mongoose. Authors have many reminders.
