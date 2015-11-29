@@ -1,7 +1,7 @@
 var express = require('express')
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
-var methodOverride = require('method-override')
+// var methodOverride = require('method-override')
 var authorsController = require("./controllers/authorsController")
 require("./db/schema")
 mongoose.connect('mongodb://localhost/reminders')
@@ -9,7 +9,7 @@ var app = express()
 app.set("view engine", "hbs")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(methodOverride('_method'))
+// app.use(methodOverride('_method'))
 
 
 var ReminderModel = mongoose.model('Reminder')
