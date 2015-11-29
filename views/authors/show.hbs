@@ -1,6 +1,11 @@
 <h2>Reminders for {{name}}</h2>
 {{#each reminders}}
-<p>{{body}}</p><a href="/authors/{{../_id}}/reminders/{{_id}}/delete">Done!</a>
+  <p>{{body}}</p>
+  <form method="post" action="/authors/{{../_id}}/reminders/{{_id}}?_method=delete">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Done!">
+  </form>
+  <a href="/authors/{{../_id}}/reminders/{{_id}}/delete">Done!</a>
 {{/each}}
 
 <h3>New Reminder</h3>
