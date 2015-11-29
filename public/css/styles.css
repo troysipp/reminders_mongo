@@ -66,6 +66,7 @@ h3 {
 
 .reminders-show-each {
   display: block;
+  margin: 1em 0 1em 2em;
 }
 
 .reminders-show-each p, .reminders-show-each form {
