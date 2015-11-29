@@ -92,3 +92,15 @@ app.post("/authors/:id/reminders", function(req,res){
     })
   })
 })
+
+app.get("/authors/:authorId/reminders/:id/delete", function(req,res){
+  AuthorModel.findByIdAndUpdate(req.params.authorId, {
+    $pull:{
+      reminders: {_id: req.params.id}
+    }
+  }, function(err, docs){
+    if(!err){
+      res.redirect("/authors/" + req.params.authorId)
+    }
+  })
+})
