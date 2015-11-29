@@ -21,37 +21,10 @@ app.listen(4000, function(){
 
 app.get("/authors", authorsController.index)
 app.get("/authors/new", authorsController.new)
-
-
 app.post("/authors", authorsController.create)
-
 app.get("/authors/:id", authorsController.show)
-
 app.get("/authors/:id/edit", authorsController.edit)
-
 app.post("/authors/:id", authorsController.update)
-
 app.get("/authors/:id/delete", authorsController.delete)
-
-app.post("/authors/:id/reminders", function(req,res){
-  AuthorModel.findById(req.params.id, function(err, docs){
-    docs.reminders.push(new ReminderModel({body: req.body.body}))
-    docs.save(function(err){
-      if(!err){
-        res.redirect("/authors/" + req.params.id)
-      }
-    })
-  })
-})
-
-app.get("/authors/:authorId/reminders/:id/delete", function(req,res){
-  AuthorModel.findByIdAndUpdate(req.params.authorId, {
-    $pull:{
-      reminders: {_id: req.params.id}
-    }
-  }, function(err, docs){
-    if(!err){
-      res.redirect("/authors/" + req.params.authorId)
-    }
-  })
-})
+app.post("/authors/:id/reminders", authorsController.addReminder)
+app.get("/authors/:authorId/reminders/:id/delete", authorsController.removeReminder)

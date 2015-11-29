@@ -1,4 +1,5 @@
 var AuthorModel = require("../models/author")
+var ReminderModel = require("../models/reminder")
 
 var authorsController = {
   index: function(req, res){
@@ -42,6 +43,27 @@ var authorsController = {
     AuthorModel.remove({_id: req.params.id}, function(err){
       if(!err){
         res.redirect("/authors")
+      }
+    })
+  },
+  addReminder: function(req, res){
+    AuthorModel.findById(req.params.id, function(err, docs){
+      docs.reminders.push(new ReminderModel({body: req.body.body}))
+      docs.save(function(err){
+        if(!err){
+          res.redirect("/authors/" + req.params.id)
+        }
+      })
+    })
+  },
+  removeReminder: function(req, res){
+    AuthorModel.findByIdAndUpdate(req.params.authorId, {
+      $pull:{
+        reminders: {_id: req.params.id}
+      }
+    }, function(err, docs){
+      if(!err){
+        res.redirect("/authors/" + req.params.authorId)
       }
     })
   }
