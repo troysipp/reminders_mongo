@@ -25,7 +25,7 @@ app.get("/reminders", function(req, res){
 
 app.get("/authors", function(req, res){
   AuthorModel.find({}, function(err, docs){
-    res.send(docs);
+    res.render("authors/index", {authors: docs});
 
   })
 });

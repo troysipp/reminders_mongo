@@ -11,12 +11,15 @@ var tom = new AuthorModel({name: "tom"})
 var reminder1 = new ReminderModel({body: "reminder1!!"})
 var reminder2 = new ReminderModel({body: "reminder2!!"})
 var reminder3 = new ReminderModel({body: "reminder3!!"})
+var reminder4 = new ReminderModel({body: "reminder4!!"})
+var reminder5 = new ReminderModel({body: "reminder5!!"})
+var reminder6 = new ReminderModel({body: "reminder6!!"})
 
 var authors = [bob, charlie, tom]
-var reminders = [reminder1, reminder2, reminder3]
+var reminders = [reminder1, reminder2, reminder3, reminder4, reminder5, reminder6]
 
 for(var i = 0; i < authors.length; i++){
-  authors[i].reminders.push(reminders[i])
+  authors[i].reminders.push(reminders[i], reminders[i+3])
 
   authors[i].save(function(err){
     if (err){
