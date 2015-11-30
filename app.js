@@ -5,7 +5,7 @@ var methodOverride = require('method-override')
 var authorsController = require("./controllers/authorsController")
 mongoose.connect('mongodb://localhost/reminders')
 var app = express()
-app.set("view engine", "hbs")
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
@@ -15,6 +15,9 @@ app.listen(4000, function(){
   console.log("app listening on port 4000")
 })
 
+app.get("/", function(req, res){
+  res.sendFile("index.html");
+});
 app.get("/authors", authorsController.index)
 app.post("/authors", authorsController.create)
 app.get("/authors/:id", authorsController.show)
