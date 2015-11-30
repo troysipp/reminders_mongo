@@ -19,14 +19,14 @@ var authorsController = {
     })
   },
   show: function(req, res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      res.render("authors/show", docs)
+    AuthorModel.findById(req.params.id, function(err, doc){
+      res.render("authors/show", {author: doc})
     })
 
   },
   edit: function(req,res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      res.render("authors/edit", docs)
+    AuthorModel.findById(req.params.id, function(err, doc){
+      res.render("authors/edit", {author: doc})
     })
   },
   update: function(req,res){
