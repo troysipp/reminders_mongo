@@ -3,56 +3,39 @@ var ReminderModel = require("../models/reminder")
 
 var authorsController = {
   index: function(req, res){
-    AuthorModel.find({}, function(err, docs){
-      res.render("authors/index", {authors: docs})
+    AuthorModel.find({}, function(err, authors){
+      res.json(authors);
     })
   },
-  new: function(req, res){
-    res.render("authors/new")
-  },
   create: function(req, res){
-    var author = new AuthorModel({name: req.body.name})
-    author.save(function(err){
-      if (!err){
-        res.redirect("authors")
-      }
+    new AuthorModel({name: req.body.name}).save(function(err, author){
+      res.json(author);
     })
   },
   show: function(req, res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      res.render("authors/show", docs)
-    })
-
-  },
-  edit: function(req,res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      res.render("authors/edit", docs)
+    AuthorModel.findById(req.params.id, function(err, author){
+      res.json(author);
     })
   },
   update: function(req,res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      docs.name = req.body.name
-      docs.save(function(err){
-        if(!err){
-          res.redirect("/authors/" + req.params.id)
-        }
+    AuthorModel.findById(req.params.id, function(err, author){
+      author.name = req.body.name;
+      author.save(function(err, author){
+        res.json(author);
       })
     })
   },
   delete: function(req, res){
     AuthorModel.remove({_id: req.params.id}, function(err){
-      if(!err){
-        res.redirect("/authors")
-      }
+      res.json({success: true});
     })
   },
   addReminder: function(req, res){
-    AuthorModel.findById(req.params.id, function(err, docs){
-      docs.reminders.push(new ReminderModel({body: req.body.body}))
-      docs.save(function(err){
-        if(!err){
-          res.redirect("/authors/" + req.params.id)
-        }
+    AuthorModel.findById(req.params.id, function(err, author){
+      var reminder = new ReminderModel({body: req.body.body});
+      author.reminders.push(reminder)
+      author.save(function(err, reminder){
+        res.json(reminder);
       })
     })
   },
@@ -61,11 +44,9 @@ var authorsController = {
       $pull:{
         reminders: {_id: req.params.id}
       }
-    }, function(err, docs){
-      if(!err){
-        res.redirect("/authors/" + req.params.authorId)
-      }
-    })
+    }, function(err, author){
+      res.json(author);
+    });
   }
 }
 
