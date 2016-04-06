@@ -26,3 +26,8 @@ var AuthorSchema = new Schema({
 
 var AuthorModel = mongoose.model("Author", AuthorSchema);
 var ReminderModel = mongoose.model("Reminder", ReminderSchema);
+
+module.exports ={
+  AuthorModel: AuthorModel,
+  ReminderModel: ReminderModel
+};

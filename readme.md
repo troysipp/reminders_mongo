@@ -29,6 +29,17 @@ Instructions:
 1. Write your Schemas for Reminders and Authors
 2. Create your Models by using `mongoose.model`
 
+## Step 4: Seeds Data and Create
+
+We will be writing our schemas for Reminders and Authors
+
+Instructions:
+1. Add Module to Exports and Require that in your `db/seeds.js`
+2. Create seed data of your choosing for both Both Authors and Reminders
+3. Adds a few Reminders to each Author
+4. Test your data in the terminal 
+
+
 ## Mongo Instructions:
 
 ```
