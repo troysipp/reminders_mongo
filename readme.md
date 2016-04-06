@@ -3,7 +3,8 @@
 ## Description
 This is a 2 model Todo App built using Mongo/Mongoose. Authors have many Reminders.
 
-## Setup
+## Step 1: Initial Set Up
+
 Fork or Clone this repo.
 
 ```bash
@@ -12,15 +13,21 @@ $ cd reminders_mongo
 $ git checkout mongoose-branch
 ```
 
-## Install Mongoose and Establish Connection
+## Step 2: Install Mongoose and Establish Connection
 
 Instructions:
 
 1. First we will be installing Mongoose: `$ npm install mongoose --save`
 2. Next write code to require Mongoose and establish a connection.
-3. Let's test to make sure our connection works as expected! to make sure we have a 
+3. Let's test to make sure our connection works as expected!
 
-## Schema & Models:
+## Step 3: Create Schema and Models
+
+We will be writing our schemas for Reminders and Authors
+
+Instructions:
+1. Write your Schemas for Reminders and Authors
+2. Create your Models by using `mongoose.model`
 
 ## Mongo Instructions:
 
