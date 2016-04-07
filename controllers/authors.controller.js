@@ -19,7 +19,17 @@ var authorsController = {
   update: function(req, update){
     AuthorModel.findOneAndUpdate(req, update, {new: true}, function(err, docs){
       if(err){
-        console.log(err)
+        console.log(err);
+      }
+      else{
+        console.log(docs);
+      }
+    });
+  },
+  destroy: function(req){
+    AuthorModel.findOneAndRemove(req, function(err, docs){
+      if(err){
+        console.log(err);
       }
       else{
         console.log(docs);
@@ -28,4 +38,4 @@ var authorsController = {
   }
 };
 
-authorsController.update({name: "tom"}, {name: "Sarah"});
+authorsController.destroy({name: "bob"});

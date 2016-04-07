@@ -40,13 +40,26 @@ Instructions:
 4. Run `node db/seeds.js`
 4. Test your data in the terminal
 
-## Step 5: (Read)
+## Step 5: Read
 
 Instructions:
 1. Add a controllers directory and `controllers/authors.controller.js` file
 2. In your `authors.controller.js` file add in code for an `index` method that would query all authors.
-3. Then, write the code to query one author.
-4. Run `node controllers/authors.controller.js` to verify
+3. Then, write the code for a`show` method to query one author.
+4. Call the methods to test and Run `node controllers/authors.controller.js`
+
+## Step 6: Update
+
+Instructions
+1. Add an update method or function to our `controllers/authors.controller.js` file.
+2. Call the method to test and Run `node controllers/authors.controller.js`
+
+
+## Step 7: Delete
+
+Instructions:
+1. Add an `destroy` method to find an author and remove that document from our database.
+2. Add an `destroyAll` method to remove all authors with the name "tom" from our database.  You may need to add in an additional document with the name `tom` to test this method. 
 
 ## Mongo Instructions:
 
