@@ -3,7 +3,7 @@ var Schema = require("../db/schema.js");
 
 var AuthorModel = Schema.AuthorModel
 var ReminderModel = Schema.ReminderModel
-//
+
 var bob = new AuthorModel({name: "bob"});
 var susy = new AuthorModel({name: "charlie"});
 var tom = new AuthorModel({name: "tom"});
