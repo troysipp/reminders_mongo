@@ -33,11 +33,13 @@ Instructions:
 
 2. Create your Models by using `mongoose.model`
 
+
 ## Step 4: Seeds Data and Create
 
 We will be writing our schemas for Reminders and Authors
 
 Instructions:
+
 1. Add Module to Exports and Require that in your `db/seeds.js`
 
 2. Create seed data of your choosing for both Both Authors and Reminders
@@ -51,6 +53,7 @@ Instructions:
 ## Step 5: Read
 
 Instructions:
+
 1. Add a controllers directory and `controllers/authors.controller.js` file
 
 2. In your `authors.controller.js` file add in code for an `index` method that would query all authors.
