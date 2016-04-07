@@ -11,6 +11,7 @@ Fork or Clone this repo.
 $ git clone
 $ cd reminders_mongo
 $ git checkout mongoose
+$ npm install
 ```
 
 ## Step 2: Install Mongoose and Establish Connection
@@ -21,7 +22,7 @@ Instructions:
 
 2. Next write code to require Mongoose and establish a connection.
 
-3. Let's test to make sure our connection works as expected!
+3. Let's test to make sure our connection works as expected! Run `nodemon`;
 
 ## Step 3: Create Schema and Models
 
@@ -46,7 +47,7 @@ Instructions:
 
 3. Adds a few Reminders to each Author
 
-4. Run `node db/seeds.js`
+4. Run `node db/seeds.js` to seed our database.
 
 4. Test your data in the terminal
 
@@ -60,7 +61,11 @@ Instructions:
 
 3. Then, write the code for a`show` method to query one author.
 
-4. Call the methods to test and Run `node controllers/authors.controller.js`
+4. Add `module.exports = authorsController;` in our `authors.controller.js` file
+
+5. Add the following code to our `index.js`: `var authorsController = require("./controllers/authors.controller.js");`
+
+4. Call the methods in our index.js and run `nodemon`
 
 ## Step 6: Update
 
@@ -68,7 +73,7 @@ Instructions
 
 1. Add an update method or function to our `controllers/authors.controller.js` file.
 
-2. Call the method to test and Run `node controllers/authors.controller.js`
+2. Call the method in index.js to test and run `nodemon`
 
 
 ## Step 7: Delete
