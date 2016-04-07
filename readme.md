@@ -10,7 +10,7 @@ Fork or Clone this repo.
 ```bash
 $ git clone
 $ cd reminders_mongo
-$ git checkout mongoose-branch
+$ git checkout mongoose
 ```
 
 ## Step 2: Install Mongoose and Establish Connection
