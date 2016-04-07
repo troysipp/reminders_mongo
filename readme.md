@@ -37,8 +37,16 @@ Instructions:
 1. Add Module to Exports and Require that in your `db/seeds.js`
 2. Create seed data of your choosing for both Both Authors and Reminders
 3. Adds a few Reminders to each Author
-4. Test your data in the terminal 
+4. Run `node db/seeds.js`
+4. Test your data in the terminal
 
+## Step 5: (Read)
+
+Instructions:
+1. Add a controllers directory and `controllers/authors.controller.js` file
+2. In your `authors.controller.js` file add in code for an `index` method that would query all authors.
+3. Then, write the code to query one author.
+4. Run `node controllers/authors.controller.js` to verify
 
 ## Mongo Instructions:
 
