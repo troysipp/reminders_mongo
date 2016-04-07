@@ -51,8 +51,20 @@ var authorsController = {
         });
       }
     });
+  },
+  removeReminder: function(req, project){
+    AuthorModel.findOneAndUpdate(req, {
+      $pull: { reminders: {body: project.body} }
+    },
+    {new: true}, function(err, docs){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(docs);
+      }
+    });
   }
 };
 
-authorsController.destroy({name: "bob"});
-authorsController.destroyAll({name: "tom"});
+  authorsController.removeReminder({name: "bob"}, {body: "reminder4!!"});
