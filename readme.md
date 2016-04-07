@@ -46,7 +46,7 @@ Instructions:
 
 3. Adds a few Reminders to each Author
 
-4. Run `node db/seeds.js`
+4. Run `nodemon`
 
 4. Test your data in the terminal
 

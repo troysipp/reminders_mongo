@@ -67,4 +67,4 @@ var authorsController = {
   }
 };
 
-  authorsController.removeReminder({name: "bob"}, {body: "reminder4!!"});
+module.exports = authorsController;
