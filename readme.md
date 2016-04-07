@@ -59,7 +59,11 @@ Instructions
 
 Instructions:
 1. Add an `destroy` method to find an author and remove that document from our database.
-2. Add an `destroyAll` method to remove all authors with the name "tom" from our database.  You may need to add in an additional document with the name `tom` to test this method. 
+2. Add an `destroyAll` method to remove all authors with the name "tom" from our database.  You may need to add in an additional document with the name `tom` to test this method.
+
+## Bonus
+
+Work to Write Code to Add and Delete Reminders from Authors!
 
 ## Mongo Instructions:
 
