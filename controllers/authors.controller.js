@@ -19,7 +19,7 @@ var authorsController = {
   update: function(req, update){
     AuthorModel.findOneAndUpdate(req, update, {new: true}, function(err, docs){
       if(err){
-        console.log(err);
+        console.log(err)
       }
       else{
         console.log(docs);
@@ -35,7 +35,24 @@ var authorsController = {
         console.log(docs);
       }
     });
+  },
+  destroyAll: function(req){
+    AuthorModel.find({}, function(err, docs){
+      if(err){
+        console.log(err)
+      }
+      else{
+        docs.forEach(function(author){
+          if(author.name === req.name){
+            author.remove().then(function(results){
+              console.log(results);
+            })
+          }
+        });
+      }
+    });
   }
 };
 
 authorsController.destroy({name: "bob"});
+authorsController.destroyAll({name: "tom"});
