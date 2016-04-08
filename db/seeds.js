@@ -5,7 +5,7 @@ var AuthorModel = Schema.AuthorModel
 var ReminderModel = Schema.ReminderModel
 
 var bob = new AuthorModel({name: "bob"});
-var susy = new AuthorModel({name: "charlie"});
+var susy = new AuthorModel({name: "susy"});
 var tom = new AuthorModel({name: "tom"});
 
 
