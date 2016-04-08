@@ -22,7 +22,7 @@ Instructions:
 
 2. Next write code to require Mongoose and establish a connection.
 
-3. Let's test to make sure our connection works as expected! Run `nodemon`;
+3. Let's test to make sure our connection works as expected! Run `node db/schema.js`
 
 ## Step 3: Create Schema and Models
 
